@@ -79,11 +79,11 @@ To estimate the Customer Lifetime Value (CLV) for each customer.
 - Used a `LEFT JOIN` between `users_customuser` and `savings_savingsaccount` to retain all customers, including those without transactions.
 - Concatenated `first_name` and `last_name` as `name` for consistent naming.
 - Returned CLV values using the formula:
-<prev>```CLV = (total_transactions / tenure) * 12 * avg_profit_per_transaction```</prev>
+<prev>formular```CLV = (total_transactions / tenure) * 12 * avg_profit_per_transaction```</prev>
 
-- Ordered the results by CLV in descending order.
+- The results were ordered by estimated CLV in descending order.
 
 ### Challenges
-- Needed to ensure customers without transactions were still included in the output — handled with a `LEFT JOIN`.
+- I needed to ensure customers without transactions were still included in the output, which was handled with a `LEFT JOIN`.
 - Used the `ORDER BY` clause on the calculated `estimated_CLV` for correct ranking.
 
