@@ -45,10 +45,10 @@ SELECT
       s.total_savings + i.total_investment
     )/ 100, 
     2
-  ) AS total_deposit 
+  ) AS total_deposit -- Converted to Naira
 FROM 
   users_customuser u 
   JOIN funded_savings_customers s ON u.id = s.owner_id 
   JOIN funded_investment_customers i ON u.id = i.owner_id 
 ORDER BY 
-  total_deposit DESC
+  total_deposit DESC;
