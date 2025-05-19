@@ -27,4 +27,25 @@ DataAnalytics-Assessment
 
 ## Assessment_Q2.sql: Transaction Frequency Analysis
 
-### To calculate the average number of transactions per customer per month and categorize them:
+### Task:
+ To calculate the average number of transactions per customer per month and categorize them.
+
+### Approach:
+- Created a CTE to evaluate the transaction frequency per customer and number of months between the first transaction date and last transaction date from savings_savingsaccount
+    - Counted the number of transactions per customer using COUNT()
+    - Calculated the number of months between the first transaction date and last transaction date for each customer using PERIOD_DIFF()
+- Evaluated the average transaction per month for each customer and categorize each customer from high - low frequency from the transaction_frequency_per_customer CTE using case
+- Finally grouped the customers_by_category CTE by frequency category and calculated average frequency and customer count
+
+### Challenges:
+- Needed to calculated the number of months between first transaction date and last transaction date and to make sure the count includes the month of first transaction. 
+    - I used MIN() and MAX() to extract the first and last transaction dates
+    -  PERIOD_DIFF and DATE_FORMATE() to exctract the number of months between the dates and added 1 to include first month of transaction
+
+## Assessment_Q3.sql: Account Inactivity Alert
+
+### Task:
+ To Find all active accounts (savings or investments) with no transactions in the last 1 year (365 days)
+
+ ### Approach:
+-
